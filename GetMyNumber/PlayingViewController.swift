@@ -18,6 +18,8 @@ class PlayingViewController: UIViewController {
         // Do any additional setup after loading the view.
         myCardView.layer.cornerRadius = 20
         myCardView.layer.borderWidth = 3
+        myCardView.clipsToBounds = true
+        view.bringSubviewToFront(myCardView)
         
         opponentCardView.layer.cornerRadius = 20
         opponentCardView.layer.borderWidth = 3
