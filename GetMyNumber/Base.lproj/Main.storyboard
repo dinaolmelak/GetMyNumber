@@ -15,39 +15,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get My Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNx-Tx-huH">
-                                <rect key="frame" x="126" y="79" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get My Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNx-Tx-huH">
+                                <rect key="frame" x="126.5" y="80" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZL-BI-4vI">
-                                <rect key="frame" x="16" y="156" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZL-BI-4vI">
+                                <rect key="frame" x="16" y="121" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwL-9b-E44">
-                                <rect key="frame" x="16" y="198" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwL-9b-E44">
+                                <rect key="frame" x="16" y="163" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-pb-h5T">
-                                <rect key="frame" x="13" y="240" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-pb-h5T">
+                                <rect key="frame" x="16" y="240" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ae2-3U-Tcl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-Xv-w2k">
-                                <rect key="frame" x="313" y="240" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQc-Xv-w2k">
+                                <rect key="frame" x="312" y="240" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="onTapSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PP4-mr-T9O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bZL-BI-4vI" firstAttribute="top" secondItem="YNx-Tx-huH" secondAttribute="bottom" constant="20" id="2nh-uR-w3r"/>
+                            <constraint firstItem="NKX-pb-h5T" firstAttribute="leading" secondItem="RwL-9b-E44" secondAttribute="leading" id="HYN-JZ-M6b"/>
+                            <constraint firstItem="RwL-9b-E44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Hde-pI-Fcx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bZL-BI-4vI" secondAttribute="trailing" constant="16" id="Kvd-tj-p0L"/>
+                            <constraint firstItem="xQc-Xv-w2k" firstAttribute="top" secondItem="RwL-9b-E44" secondAttribute="bottom" constant="43" id="Qzg-IO-Otn"/>
+                            <constraint firstItem="YNx-Tx-huH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="XqP-Vc-hgv"/>
+                            <constraint firstItem="YNx-Tx-huH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZKb-lb-vNc"/>
+                            <constraint firstItem="xQc-Xv-w2k" firstAttribute="trailing" secondItem="RwL-9b-E44" secondAttribute="trailing" id="ZnJ-gh-AXx"/>
+                            <constraint firstItem="RwL-9b-E44" firstAttribute="top" secondItem="bZL-BI-4vI" secondAttribute="bottom" constant="8" id="f4G-eT-xzc"/>
+                            <constraint firstItem="NKX-pb-h5T" firstAttribute="top" secondItem="RwL-9b-E44" secondAttribute="bottom" constant="43" id="mYb-pg-zsk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RwL-9b-E44" secondAttribute="trailing" constant="16" id="oAH-5h-9wI"/>
+                            <constraint firstItem="bZL-BI-4vI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uEL-Bo-u8u"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="RwL-9b-E44" id="KdG-e0-JFH"/>
+                        <outlet property="usernameField" destination="bZL-BI-4vI" id="lh9-La-bPO"/>
+                        <segue destination="POj-SA-BlC" kind="presentation" identifier="SignedIn" modalPresentationStyle="fullScreen" id="7VZ-fb-Cbr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -481,6 +501,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="POj-SA-BlC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="gFR-6u-fha"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="O6o-pr-yf7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yM4-m6-cng">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -492,7 +513,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tz-UF-Z76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-590" y="976"/>
+            <point key="canvasLocation" x="-761" y="976"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="GRp-mP-OKB">
