@@ -8,10 +8,14 @@
 
 import UIKit
 
-class PlayingViewController: UIViewController {
+class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
+    var predictedNumbers = [NumberData]()
     @IBOutlet weak var opponentCardView: UIView!
     @IBOutlet weak var myCardView: UIView!
+    @IBOutlet weak var myCardTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +27,26 @@ class PlayingViewController: UIViewController {
         
         opponentCardView.layer.cornerRadius = 20
         opponentCardView.layer.borderWidth = 3
+        
+        myCardTableView.delegate = self
+        myCardTableView.dataSource = self
     }
     
-
+    @IBAction func onTapEdit(_ sender: Any) {
+        performSegue(withIdentifier: "EditMyCardSegue", sender: self)
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return predictedNumbers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = myCardTableView.dequeueReusableCell(withIdentifier: "PlayingNumberCell") as! PlayingNumberCell
+        
+        return cell
+    }
     /*
     // MARK: - Navigation
 
