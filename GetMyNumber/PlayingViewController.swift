@@ -36,6 +36,21 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
         performSegue(withIdentifier: "EditMyCardSegue", sender: self)
         
     }
+    @IBAction func onTapAvailableNum(_ sender: Any) {
+        
+        let button = sender as! UIButton
+        if button.isSelected{
+            let buttonNum = button.tag
+            let image = UIImage(systemName: "\(buttonNum).circle")
+            button.setImage(image, for: .normal)
+            button.isSelected = false
+        }else{
+            let buttonNum = button.tag
+            let image = UIImage(systemName: "\(buttonNum).circle.fill")
+            button.setImage(image, for: .normal)
+            button.isSelected = true
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

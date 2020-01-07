@@ -15,7 +15,6 @@
 		6121BE2C23C3B97C0028D281 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121BE2B23C3B97C0028D281 /* PlayingViewController.swift */; };
 		6121BE2E23C3B98D0028D281 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121BE2D23C3B98D0028D281 /* GamesViewController.swift */; };
 		6121BE3023C3B9B80028D281 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121BE2F23C3B9B80028D281 /* SignInViewController.swift */; };
-		61E81C2323C5155800876CD5 /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2223C5155800876CD5 /* MyCardViewController.swift */; };
 		61E81C2523C519C600876CD5 /* PlayingNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */; };
 		61E81C2723C51A7400876CD5 /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2623C51A7400876CD5 /* NumberData.swift */; };
 		C06CC01A23C4E09200737A62 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CC01923C4E09200737A62 /* ProfileViewController.swift */; };
@@ -33,7 +32,6 @@
 		6121BE2B23C3B97C0028D281 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		6121BE2D23C3B98D0028D281 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		6121BE2F23C3B9B80028D281 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		61E81C2223C5155800876CD5 /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingNumberCell.swift; sourceTree = "<group>"; };
 		61E81C2623C51A7400876CD5 /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
 		C06CC01923C4E09200737A62 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				6121BE2D23C3B98D0028D281 /* GamesViewController.swift */,
 				6121BE2F23C3B9B80028D281 /* SignInViewController.swift */,
 				C06CC01923C4E09200737A62 /* ProfileViewController.swift */,
-				61E81C2223C5155800876CD5 /* MyCardViewController.swift */,
 				61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */,
 				61E81C2623C51A7400876CD5 /* NumberData.swift */,
 			);
@@ -160,7 +157,6 @@
 			files = (
 				C06CC01A23C4E09200737A62 /* ProfileViewController.swift in Sources */,
 				6121BE2C23C3B97C0028D281 /* PlayingViewController.swift in Sources */,
-				61E81C2323C5155800876CD5 /* MyCardViewController.swift in Sources */,
 				6121BE1723C3AB9E0028D281 /* AppDelegate.swift in Sources */,
 				6121BE1923C3AB9E0028D281 /* SceneDelegate.swift in Sources */,
 				6121BE3023C3B9B80028D281 /* SignInViewController.swift in Sources */,
