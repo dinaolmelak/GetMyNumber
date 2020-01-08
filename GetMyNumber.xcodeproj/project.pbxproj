@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		61E81C2523C519C600876CD5 /* PlayingNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */; };
 		61E81C2723C51A7400876CD5 /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2623C51A7400876CD5 /* NumberData.swift */; };
 		C06CC01A23C4E09200737A62 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CC01923C4E09200737A62 /* ProfileViewController.swift */; };
+		C076727123C6141700FF6BD6 /* PredictorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076727023C6141600FF6BD6 /* PredictorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		61E81C2623C51A7400876CD5 /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
 		AF0C3D69E5289968B153CE27 /* Pods_GetMyNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetMyNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06CC01923C4E09200737A62 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C076727023C6141600FF6BD6 /* PredictorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				C06CC01923C4E09200737A62 /* ProfileViewController.swift */,
 				61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */,
 				61E81C2623C51A7400876CD5 /* NumberData.swift */,
+				C076727023C6141600FF6BD6 /* PredictorViewController.swift */,
 			);
 			path = GetMyNumber;
 			sourceTree = "<group>";
@@ -97,7 +100,6 @@
 				4F0595D356874CDA30F1F1FB /* Pods-GetMyNumber.debug.xcconfig */,
 				192F621361FF3253110658DE /* Pods-GetMyNumber.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -232,6 +234,7 @@
 				6121BE2E23C3B98D0028D281 /* GamesViewController.swift in Sources */,
 				61E81C2523C519C600876CD5 /* PlayingNumberCell.swift in Sources */,
 				61E81C2723C51A7400876CD5 /* NumberData.swift in Sources */,
+				C076727123C6141700FF6BD6 /* PredictorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -199,17 +199,11 @@
                                                 <connections>
                                                     <outlet property="groupNumLabel" destination="8vI-wN-rum" id="f87-ol-mD5"/>
                                                     <outlet property="orderNumLabel" destination="mKl-hc-hab" id="dGR-ui-6J9"/>
+                                                    <segue destination="DKm-Tb-7Rf" kind="show" id="eWi-qQ-SoM"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0P-TW-i9U">
-                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
-                                        <state key="normal" title="Edit"/>
-                                        <connections>
-                                            <action selector="onTapEdit:" destination="IZS-4r-UPS" eventType="touchUpInside" id="R5H-pN-Jo6"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0S-TK-XcD">
                                         <rect key="frame" x="331" y="8" width="36" height="30"/>
                                         <state key="normal" title="Send"/>
@@ -345,18 +339,16 @@
                                 <constraints>
                                     <constraint firstItem="NHd-eH-5Tn" firstAttribute="leading" secondItem="Qup-xd-uGi" secondAttribute="trailing" constant="40" id="06F-XD-yCL"/>
                                     <constraint firstItem="Uxm-Ca-E8T" firstAttribute="leading" secondItem="p4T-Qm-NA8" secondAttribute="leading" id="3cE-2i-WGY"/>
-                                    <constraint firstItem="d0P-TW-i9U" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="top" id="F5n-2O-0I7"/>
                                     <constraint firstItem="p4T-Qm-NA8" firstAttribute="leading" secondItem="Qup-xd-uGi" secondAttribute="leading" id="KDv-2i-cN1"/>
                                     <constraint firstItem="pMi-Bf-bgb" firstAttribute="top" secondItem="GLA-8J-xbH" secondAttribute="top" constant="8" id="Lyf-1M-AWO"/>
+                                    <constraint firstItem="Qup-xd-uGi" firstAttribute="leading" secondItem="GLA-8J-xbH" secondAttribute="leading" constant="8" id="MVj-Ja-zga"/>
                                     <constraint firstItem="pMi-Bf-bgb" firstAttribute="centerX" secondItem="GLA-8J-xbH" secondAttribute="centerX" id="P2m-JG-8s0"/>
                                     <constraint firstItem="Uxm-Ca-E8T" firstAttribute="top" secondItem="p4T-Qm-NA8" secondAttribute="bottom" constant="8" id="PJc-f9-XBv"/>
                                     <constraint firstItem="Qup-xd-uGi" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="bottom" constant="8" id="PN3-4A-9Va"/>
                                     <constraint firstItem="NHd-eH-5Tn" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="bottom" constant="8" id="Pfb-u2-2my"/>
                                     <constraint firstItem="p4T-Qm-NA8" firstAttribute="top" secondItem="Qup-xd-uGi" secondAttribute="bottom" constant="-2.5" id="Vfq-Qk-flk"/>
                                     <constraint firstAttribute="bottom" secondItem="NHd-eH-5Tn" secondAttribute="bottom" id="Wz3-rD-hMN"/>
-                                    <constraint firstItem="d0P-TW-i9U" firstAttribute="leading" secondItem="GLA-8J-xbH" secondAttribute="leading" constant="8" id="Z83-YP-gyn"/>
                                     <constraint firstItem="NHd-eH-5Tn" firstAttribute="trailing" secondItem="E0S-TK-XcD" secondAttribute="trailing" id="dga-Ye-R4h"/>
-                                    <constraint firstItem="Qup-xd-uGi" firstAttribute="leading" secondItem="d0P-TW-i9U" secondAttribute="leading" id="f5t-op-gq0"/>
                                     <constraint firstItem="GQu-zs-bKE" firstAttribute="top" secondItem="Uxm-Ca-E8T" secondAttribute="bottom" constant="8" id="gnG-pL-Tli"/>
                                     <constraint firstAttribute="trailing" secondItem="E0S-TK-XcD" secondAttribute="trailing" constant="8" id="hYm-6T-rz6"/>
                                     <constraint firstItem="E0S-TK-XcD" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="top" id="o9X-GC-EJf"/>
@@ -382,17 +374,16 @@
                         <outlet property="myCardTableView" destination="NHd-eH-5Tn" id="1mQ-wb-vBe"/>
                         <outlet property="myCardView" destination="GLA-8J-xbH" id="3sB-Gp-NLx"/>
                         <outlet property="opponentCardView" destination="35t-tn-3LN" id="uSF-Lj-1xe"/>
-                        <segue destination="DKm-Tb-7Rf" kind="show" identifier="EditMyCardSegue" id="jcH-Vu-7nM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj6-wd-oge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2316" y="975.56221889055485"/>
         </scene>
-        <!--My Card View Controller-->
+        <!--Predictor View Controller-->
         <scene sceneID="gPx-WR-mpJ">
             <objects>
-                <viewController id="DKm-Tb-7Rf" customClass="MyCardViewController" customModule="GetMyNumber" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DKm-Tb-7Rf" customClass="PredictorViewController" customModule="GetMyNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FwD-xN-KtL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -460,10 +451,15 @@
                         <viewLayoutGuide key="safeArea" id="t3B-AN-2OQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="izY-ZG-aR7">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="eHN-Ym-kYZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="eHN-Ym-kYZ">
+                            <connections>
+                                <action selector="onTapDone:" destination="DKm-Tb-7Rf" id="8gu-XF-BuE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="MyCardView" destination="tsY-Bm-5tU" id="HUu-rr-Ckc"/>
+                        <outlet property="groupTextField" destination="AJL-wl-1mY" id="fnC-O7-tdA"/>
+                        <outlet property="orderTextField" destination="KfX-ux-aqX" id="Nhb-FW-Zfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIv-8o-Nkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

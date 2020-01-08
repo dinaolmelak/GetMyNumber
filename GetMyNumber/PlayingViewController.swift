@@ -30,12 +30,12 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         myCardTableView.delegate = self
         myCardTableView.dataSource = self
+        
+        let firstGuess = NumberData()
+        firstGuess.NumberData(Group: 5555, Order: 3333)
+        predictedNumbers.append(firstGuess)
     }
     
-    @IBAction func onTapEdit(_ sender: Any) {
-        performSegue(withIdentifier: "EditMyCardSegue", sender: self)
-        
-    }
     @IBAction func onTapAvailableNum(_ sender: Any) {
         
         let button = sender as! UIButton
@@ -59,6 +59,9 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myCardTableView.dequeueReusableCell(withIdentifier: "PlayingNumberCell") as! PlayingNumberCell
+        let guess = predictedNumbers[indexPath.row]
+        cell.groupNumLabel.text = String(guess.getGroupNum())
+        cell.orderNumLabel.text = String(guess.getOrderNum())
         
         return cell
     }

@@ -22,5 +22,9 @@ class PlayingNumberCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setGroupAndOrder(Group group: Int, Order order: Int){
+        groupNumLabel.text = String(group)
+        orderNumLabel.text = String(order)
+    }
 }
