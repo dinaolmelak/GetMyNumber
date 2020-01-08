@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
             
         } else{
             
-            var user = PFUser()
+            let user = PFUser()
             user.username = usernameField!.text
             user.password = passwordField!.text
             // other fields can be set just like with PFObject
@@ -35,6 +35,7 @@ class SignInViewController: UIViewController {
                     print(error!)
                     
                 } else{
+                    print("Signed Up")
                     self.performSegue(withIdentifier: "SignedIn", sender: self)
                     
                 }
@@ -44,7 +45,22 @@ class SignInViewController: UIViewController {
         
     }
     @IBAction func onTapSignIn(_ sender: Any) {
-        
+        if usernameField.text == nil || usernameField.text == "" || passwordField.text == nil || passwordField.text == ""{
+            showAlert(title: "Invalid Entry", message: "Please check username or password")
+            
+        } else{
+            let user = usernameField.text!
+            let pass = passwordField.text!
+            // other fields can be set just like with PFObject
+            PFUser.logInWithUsername(inBackground: user, password: pass) { (success, error) in
+                if error != nil {
+                    print(error!)
+                } else{
+                    print("Signed In")
+                    self.performSegue(withIdentifier: "SignedIn", sender: self)
+                }
+            }
+        }
         
     }
 

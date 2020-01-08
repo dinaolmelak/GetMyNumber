@@ -20,7 +20,11 @@ class PredictorViewController: UIViewController {
     }
     
     @IBAction func onTapDone(_ sender: Any) {
-        
+        if groupTextField.text == nil || orderTextField.text == nil{
+            print("No group or order")
+        } else{
+        myCardCell.setGroupAndOrder(Group: groupTextField.text!, Order: orderTextField.text!)
+        }
         
     }
     
