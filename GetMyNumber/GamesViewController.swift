@@ -21,17 +21,35 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         playersTableView.dataSource = self
     }
     override func viewDidAppear(_ animated: Bool) {
-        let game = PFObject(className: "Game")
-        game["user"] = PFUser.current()
-        game["isOnline"] = true
-        game.saveInBackground { (succes, error) in
-            if error != nil {
+        var gameOID: String!
+        let query = PFQuery(className: "Game")
+        query.includeKey("user")
+        query.whereKey("user", equalTo: PFUser.current()!)
+        query.findObjectsInBackground { (pfobjectS, error) in
+            if error != nil{
                 print(error!)
             } else{
-                print("saved status online")
+                print(pfobjectS!)
+                if pfobjectS!.count == 0{
+                    // do something
+                }else{
+                    let object = pfobjectS![0]
+                    object["isOnline"] = true
+                    object.saveInBackground()
+                }
             }
         }
-        getPlayers()
+//        let updateQ = PFQuery(className: "Game")
+//        updateQ.getObjectInBackground(withId: gameOID) { (pfObject, error) in
+//            if error != nil{
+//                print(error)
+//            } else{
+//                let gameOb = pfObject!
+//                gameOb["isOnline"] = true
+//            }
+//        }
+//
+//        getPlayers()
     }
     
     func getPlayers(){
