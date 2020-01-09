@@ -39,6 +39,8 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                     let object = pfobjectS![0]
                     object["isOnline"] = true
                     object.saveInBackground()
+                    UserDefaults.standard.set(object.objectId!, forKey: "gameID")
+                    print(object.objectId!)
                 }
             }
         }
@@ -70,6 +72,9 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    @IBAction func onTapPerson(_ sender: Any) {
+        performSegue(withIdentifier: "ProfileSegue", sender: self)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return onlinePlayers.count + 1
     }

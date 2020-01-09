@@ -63,6 +63,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tss-Iv-KbG"/>
                     <connections>
                         <outlet property="passwordField" destination="RwL-9b-E44" id="KdG-e0-JFH"/>
                         <outlet property="usernameField" destination="bZL-BI-4vI" id="lh9-La-bPO"/>
@@ -116,9 +117,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GR7-FV-que"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UBi-6A-XIt"/>
+                    <navigationItem key="navigationItem" id="UBi-6A-XIt">
+                        <barButtonItem key="rightBarButtonItem" image="person" catalog="system" id="oG1-RV-bC0">
+                            <connections>
+                                <action selector="onTapPerson:" destination="igm-Bm-krV" id="bCp-OV-QlD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playersTableView" destination="0i3-Us-0ZB" id="5js-VB-ycT"/>
+                        <segue destination="lzW-Qd-jB0" kind="show" identifier="ProfileSegue" id="qWo-Dk-0YD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdE-Db-1A2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -488,11 +496,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4DB-eL-AMi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uNc-DX-PUh"/>
+                    <navigationItem key="navigationItem" id="uNc-DX-PUh">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="OFM-2b-d5k">
+                            <connections>
+                                <action selector="onTapLogOut:" destination="lzW-Qd-jB0" id="zWF-Ae-e8U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="usernameLabel" destination="UAM-N2-QUC" id="MGp-gm-GBF"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoggedOutSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="B7m-vD-JbJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOj-C0-h0x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="2532"/>
+            <point key="canvasLocation" x="57" y="1787"/>
         </scene>
         <!--Item-->
         <scene sceneID="Ga2-be-ZGw">
@@ -513,25 +531,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tz-UF-Z76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-761" y="976"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="GRp-mP-OKB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXM-Xp-2Ew" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Tm0-t7-nvb"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E1c-L9-qmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lzW-Qd-jB0" kind="relationship" relationship="rootViewController" id="41g-Bp-YaS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dWn-k5-ycw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="57" y="1774"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="06w-de-EM2">
@@ -563,5 +562,6 @@
         <image name="7.circle" catalog="system" width="64" height="60"/>
         <image name="8.circle" catalog="system" width="64" height="60"/>
         <image name="9.circle" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>
