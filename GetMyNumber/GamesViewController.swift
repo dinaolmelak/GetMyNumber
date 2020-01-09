@@ -21,7 +21,6 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         playersTableView.dataSource = self
     }
     override func viewDidAppear(_ animated: Bool) {
-        var gameOID: String!
         let query = PFQuery(className: "Game")
         query.includeKey("user")
         query.whereKey("user", equalTo: PFUser.current()!)
@@ -32,6 +31,10 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print(pfobjectS!)
                 if pfobjectS!.count == 0{
                     // do something
+                    let object = PFObject(className: "Game")
+                    object["user"] = PFUser.current()!
+                    object["isOnline"] = true
+                    object.saveInBackground()
                 }else{
                     let object = pfobjectS![0]
                     object["isOnline"] = true
