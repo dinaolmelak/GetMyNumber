@@ -35,6 +35,7 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                     object["user"] = PFUser.current()!
                     object["isOnline"] = true
                     object.saveInBackground()
+                    UserDefaults.standard.set(object.objectId!, forKey: "gameID")
                 }else{
                     let object = pfobjectS![0]
                     object["isOnline"] = true
@@ -44,17 +45,9 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
         }
-//        let updateQ = PFQuery(className: "Game")
-//        updateQ.getObjectInBackground(withId: gameOID) { (pfObject, error) in
-//            if error != nil{
-//                print(error)
-//            } else{
-//                let gameOb = pfObject!
-//                gameOb["isOnline"] = true
-//            }
-//        }
-//
-//        getPlayers()
+        getPlayers()
+        
+        
     }
     
     func getPlayers(){
@@ -65,7 +58,14 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
             if error != nil{
                 print(error!)
             } else{
-                self.onlinePlayers = gamesArray!
+                let players = gamesArray!
+                let gameID = UserDefaults.standard.object(forKey: "gameID") as! String
+                for object in players{
+                    if object.objectId! != gameID{
+                        self.onlinePlayers.append(object)
+                    }
+                }
+
                 print(gamesArray)
                 self.playersTableView.reloadData()
             }
