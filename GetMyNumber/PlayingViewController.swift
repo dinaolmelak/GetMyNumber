@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Parse
 
 class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-
+    var opponent: PFUser!
     var predictedNumbers = [NumberData]()
     @IBOutlet weak var opponentCardView: UIView!
     @IBOutlet weak var myCardView: UIView!
@@ -34,6 +35,10 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let firstGuess = NumberData()
         firstGuess.NumberData(Group: 5555, Order: 3333)
         predictedNumbers.append(firstGuess)
+        
+        print("Here is my Object\(UserDefaults.standard.object(forKey: "gameID") as! String)")
+        
+        print(opponent.username!)
     }
     
     @IBAction func onTapAvailableNum(_ sender: Any) {

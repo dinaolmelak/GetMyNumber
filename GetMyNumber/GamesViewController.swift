@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class GamesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
+    var playGameID: String!
     var onlinePlayers = [PFObject]()
     @IBOutlet weak var playersTableView: UITableView!
     override func viewDidLoad() {
@@ -36,12 +36,14 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                     object["isOnline"] = true
                     object.saveInBackground()
                     UserDefaults.standard.set(object.objectId!, forKey: "gameID")
+                    self.playGameID = object.objectId!
                 }else{
                     let object = pfobjectS![0]
                     object["isOnline"] = true
                     object.saveInBackground()
                     UserDefaults.standard.set(object.objectId!, forKey: "gameID")
-                    print(object.objectId!)
+                    self.playGameID = object.objectId!
+                    print("-----\(object.objectId!)-------")
                 }
             }
         }
@@ -59,14 +61,14 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print(error!)
             } else{
                 let players = gamesArray!
-                let gameID = UserDefaults.standard.object(forKey: "gameID") as! String
+                let gameID = self.playGameID//UserDefaults.standard.object(forKey: "gameID") as! String
                 for object in players{
                     if object.objectId! != gameID{
                         self.onlinePlayers.append(object)
                     }
                 }
 
-                print(gamesArray)
+                print("------\(self.onlinePlayers)-------")
                 self.playersTableView.reloadData()
             }
         }
@@ -84,28 +86,43 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "PlayersCell")
             cell.textLabel!.text = PFUser.current()!.username
             cell.detailTextLabel!.text = "Online"
+            cell.selectionStyle = .none
             return cell
         } else{
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "PlayersCell")
+            let cell = playersTableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
             let game = onlinePlayers[indexPath.row - 1]
             let user = game["user"] as! PFUser
             let isOnline = game["isOnline"] as! Bool
-            cell.textLabel!.text = user.username
-            cell.detailTextLabel!.text = String(isOnline)
+            cell.usernameLabel.text = user.username
+            cell.statusLabel.text = String(isOnline)
             
             
             return cell
         }
         
     }
-    /*
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let tableViewCell = sender as! UITableViewCell
+        let indexPath = playersTableView.indexPath(for: tableViewCell)!
+        let playerPFObject = onlinePlayers[indexPath.row - 1]
+        
+        
+//        let playingVC = segue.destination as! PlayingViewController
+//        playingVC.opponent = playerPFObject["user"] as? PFUser
+        
+        //playingVC.opponent =
+        
+        
     }
-    */
+    
 
 }
