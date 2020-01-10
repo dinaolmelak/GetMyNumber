@@ -15,6 +15,8 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var opponent: PFUser!
     var predictedNumbers = [NumberData]()
     @IBOutlet weak var opponentCardView: UIView!
+    @IBOutlet weak var opponentLabel: UILabel!
+    @IBOutlet weak var playerCardLabel: UILabel!
     @IBOutlet weak var myCardView: UIView!
     @IBOutlet weak var myCardTableView: UITableView!
     override func viewDidLoad() {
@@ -38,7 +40,8 @@ class PlayingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         print("Here is my Object\(UserDefaults.standard.object(forKey: "gameID") as! String)")
         
-        print(opponent.username!)
+        opponentLabel.text =  opponent.username!
+        playerCardLabel.text = PFUser.current()!.username!
     }
     
     @IBAction func onTapAvailableNum(_ sender: Any) {

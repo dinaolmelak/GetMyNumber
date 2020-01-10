@@ -116,10 +116,9 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         let playerPFObject = onlinePlayers[indexPath.row - 1]
         
         
-//        let playingVC = segue.destination as! PlayingViewController
-//        playingVC.opponent = playerPFObject["user"] as? PFUser
-        
-        //playingVC.opponent =
+        let playingVC = segue.destination as! PlayingViewController
+        let opponentUser = playerPFObject["user"] as! PFUser
+        playingVC.opponent = opponentUser
         
         
     }
