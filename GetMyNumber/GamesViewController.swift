@@ -21,6 +21,7 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         playersTableView.dataSource = self
     }
     override func viewDidAppear(_ animated: Bool) {
+        onlinePlayers.removeAll()
         let query = PFQuery(className: "Game")
         query.includeKey("user")
         query.whereKey("user", equalTo: PFUser.current()!)
@@ -111,14 +112,17 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let tableViewCell = sender as! UITableViewCell
-        let indexPath = playersTableView.indexPath(for: tableViewCell)!
-        let playerPFObject = onlinePlayers[indexPath.row - 1]
+        if let playingVC = segue.destination as? PlayingViewController{
+            let tableViewCell = sender as! UITableViewCell
+            let indexPath = playersTableView.indexPath(for: tableViewCell)!
+            let playerPFObject = onlinePlayers[indexPath.row - 1]
+            
+            
+            
+            let opponentUser = playerPFObject["user"] as! PFUser
+            playingVC.opponent = opponentUser
+        }
         
-        
-        let playingVC = segue.destination as! PlayingViewController
-        let opponentUser = playerPFObject["user"] as! PFUser
-        playingVC.opponent = opponentUser
         
         
     }

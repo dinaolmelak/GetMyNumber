@@ -10,6 +10,7 @@ import UIKit
 
 class PlayingNumberCell: UITableViewCell {
 
+    @IBOutlet weak var guessNumLabel: UILabel!
     @IBOutlet weak var groupNumLabel: UILabel!
     @IBOutlet weak var orderNumLabel: UILabel!
     override func awakeFromNib() {

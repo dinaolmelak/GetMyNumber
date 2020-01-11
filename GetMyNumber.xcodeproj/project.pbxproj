@@ -19,6 +19,7 @@
 		61747FE723C7C53700D3CD5A /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61747FE623C7C53700D3CD5A /* PlayerCell.swift */; };
 		61E81C2523C519C600876CD5 /* PlayingNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */; };
 		61E81C2723C51A7400876CD5 /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E81C2623C51A7400876CD5 /* NumberData.swift */; };
+		C029893523C9F5C8003EB5B7 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029893423C9F5C8003EB5B7 /* CheckViewController.swift */; };
 		C06CC01A23C4E09200737A62 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CC01923C4E09200737A62 /* ProfileViewController.swift */; };
 		C076727123C6141700FF6BD6 /* PredictorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076727023C6141600FF6BD6 /* PredictorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		61E81C2423C519C600876CD5 /* PlayingNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingNumberCell.swift; sourceTree = "<group>"; };
 		61E81C2623C51A7400876CD5 /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
 		AF0C3D69E5289968B153CE27 /* Pods_GetMyNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetMyNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C029893423C9F5C8003EB5B7 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		C06CC01923C4E09200737A62 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C076727023C6141600FF6BD6 /* PredictorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				61E81C2623C51A7400876CD5 /* NumberData.swift */,
 				C076727023C6141600FF6BD6 /* PredictorViewController.swift */,
 				61747FE623C7C53700D3CD5A /* PlayerCell.swift */,
+				C029893423C9F5C8003EB5B7 /* CheckViewController.swift */,
 			);
 			path = GetMyNumber;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				61E81C2523C519C600876CD5 /* PlayingNumberCell.swift in Sources */,
 				61E81C2723C51A7400876CD5 /* NumberData.swift in Sources */,
 				C076727123C6141700FF6BD6 /* PredictorViewController.swift in Sources */,
+				C029893523C9F5C8003EB5B7 /* CheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
