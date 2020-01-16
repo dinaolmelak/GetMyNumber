@@ -82,9 +82,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-Us-0ZB">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0i3-Us-0ZB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="61" id="tg7-Cx-t6l" customClass="PlayerCell" customModule="GetMyNumber" customModuleProvider="target">
@@ -101,7 +100,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DC-MQ-pI4">
-                                                    <rect key="frame" x="-64" y="20" width="48" height="21"/>
+                                                    <rect key="frame" x="311" y="20" width="48" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -126,6 +125,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GR7-FV-que" firstAttribute="bottom" secondItem="0i3-Us-0ZB" secondAttribute="bottom" id="bCV-6D-tBy"/>
+                            <constraint firstItem="0i3-Us-0ZB" firstAttribute="top" secondItem="zl2-AO-P4s" secondAttribute="top" id="clX-6q-6kg"/>
+                            <constraint firstItem="0i3-Us-0ZB" firstAttribute="trailing" secondItem="GR7-FV-que" secondAttribute="trailing" id="dEH-1G-EpX"/>
+                            <constraint firstItem="0i3-Us-0ZB" firstAttribute="leading" secondItem="GR7-FV-que" secondAttribute="leading" id="eP0-8I-5PJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GR7-FV-que"/>
                     </view>
                     <navigationItem key="navigationItem" id="UBi-6A-XIt">
@@ -161,26 +166,24 @@
                                         <color key="textColor" red="0.0" green="0.052382637570000001" blue="0.5593955572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="guessing your number..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBF-PH-TGa">
+                                        <rect key="frame" x="80" y="154" width="183.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hOI-Q8-yyN" firstAttribute="centerX" secondItem="35t-tn-3LN" secondAttribute="centerX" id="23a-du-bTX"/>
+                                    <constraint firstItem="MBF-PH-TGa" firstAttribute="top" secondItem="hOI-Q8-yyN" secondAttribute="bottom" constant="100" id="Ebc-n9-iT1"/>
                                     <constraint firstItem="hOI-Q8-yyN" firstAttribute="top" secondItem="35t-tn-3LN" secondAttribute="top" constant="25" id="svL-XV-KRn"/>
+                                    <constraint firstItem="MBF-PH-TGa" firstAttribute="centerX" secondItem="35t-tn-3LN" secondAttribute="centerX" id="z4s-rB-vzd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLA-8J-xbH">
                                 <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the number you think opponent has." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-Qm-NA8">
-                                        <rect key="frame" x="8" y="76" width="72" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="cbW-dX-C8K"/>
-                                            <constraint firstAttribute="width" constant="72" id="m8c-h9-wpw"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-Bf-bgb">
                                         <rect key="frame" x="140.5" y="8" width="94" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -188,7 +191,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NHd-eH-5Tn">
-                                        <rect key="frame" x="96" y="45" width="271" height="500"/>
+                                        <rect key="frame" x="96" y="45" width="271" height="492"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayingNumberCell" rowHeight="40" id="0YR-T0-NkB" customClass="PlayingNumberCell" customModule="GetMyNumber" customModuleProvider="target">
@@ -237,170 +240,235 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0S-TK-XcD">
                                         <rect key="frame" x="331" y="8" width="36" height="30"/>
                                         <state key="normal" title="Send"/>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uxm-Ca-E8T">
-                                        <rect key="frame" x="8" y="114" width="78" height="20"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWG-FV-89U" userLabel="0">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="adG-d4-Mv8"/>
-                                                    <constraint firstAttribute="height" constant="20" id="tn1-tW-oPS"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="0.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="9SR-zc-Lra"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-2k-FzH" userLabel="1">
-                                                <rect key="frame" x="29" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="OX0-KV-PyL"/>
-                                                    <constraint firstAttribute="height" constant="20" id="fOO-qa-GsZ"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="1.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="sXf-Zn-Rek"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMk-1I-bxG" userLabel="2">
-                                                <rect key="frame" x="58" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="ZQX-Kp-Fso"/>
-                                                    <constraint firstAttribute="height" constant="20" id="kSE-ua-CS1"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="2.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="zwm-xO-DhP"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-zs-bKE">
-                                        <rect key="frame" x="8" y="142" width="78" height="20"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-P6-MwJ" userLabel="3">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="kQQ-Ta-eJT"/>
-                                                    <constraint firstAttribute="width" constant="20" id="nVQ-Px-Lr1"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="3.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="2zh-GX-Pj2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibe-GP-Kya" userLabel="4">
-                                                <rect key="frame" x="29" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="AtC-r4-CdR"/>
-                                                    <constraint firstAttribute="width" constant="20" id="tf7-HP-FxO"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="4.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="8uq-m3-C4h"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3w-mR-NvQ" userLabel="5">
-                                                <rect key="frame" x="58" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="fPG-hx-Rns"/>
-                                                    <constraint firstAttribute="height" constant="20" id="nJs-9i-g2e"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="5.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="uZl-Bf-Hzv"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Numbers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qup-xd-uGi">
-                                        <rect key="frame" x="8" y="45" width="78" height="33.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="78" id="9Fi-wf-yri"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.052382637570000001" blue="0.5593955572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="yuh-Sf-vVH">
-                                        <rect key="frame" x="8" y="170" width="78" height="20"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-FG-bs7" userLabel="6">
-                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="QEe-sH-ELi"/>
-                                                    <constraint firstAttribute="width" constant="20" id="sr9-hx-KIG"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="6.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="P9y-r4-N08"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-sn-gfr" userLabel="7">
-                                                <rect key="frame" x="29" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="Nc4-Xm-5sE"/>
-                                                    <constraint firstAttribute="width" constant="20" id="XkO-yf-2Md"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="7.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="f0f-Ng-Kuf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUE-bL-5zD" userLabel="8">
-                                                <rect key="frame" x="58" y="0.0" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="30q-0H-QJC"/>
-                                                    <constraint firstAttribute="width" constant="20" id="wX6-P0-jqx"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="8.circle" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="C0B-bu-wEF"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me7-F3-ox7" userLabel="9">
-                                        <rect key="frame" x="37" y="199" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="0mG-ez-8dP"/>
-                                            <constraint firstAttribute="width" constant="20" id="IhD-bX-mVa"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="9.circle" catalog="system"/>
                                         <connections>
-                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="vja-fJ-wAB"/>
+                                            <action selector="onTapSend:" destination="IZS-4r-UPS" eventType="touchUpInside" id="7qs-o1-Vyc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEx-BB-qIH">
                                         <rect key="frame" x="8" y="8" width="30" height="30"/>
                                         <state key="normal" title="Quit"/>
+                                        <connections>
+                                            <action selector="onTapQuit:" destination="IZS-4r-UPS" eventType="touchUpInside" id="uIR-Af-2hG"/>
+                                        </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-dH-yWK">
+                                        <rect key="frame" x="8" y="45" width="78" height="174"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="yuh-Sf-vVH">
+                                                <rect key="frame" x="0.0" y="121.5" width="78" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-FG-bs7" userLabel="6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="QEe-sH-ELi"/>
+                                                            <constraint firstAttribute="width" constant="20" id="sr9-hx-KIG"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="6.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="P9y-r4-N08"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-sn-gfr" userLabel="7">
+                                                        <rect key="frame" x="29" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Nc4-Xm-5sE"/>
+                                                            <constraint firstAttribute="width" constant="20" id="XkO-yf-2Md"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="7.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="f0f-Ng-Kuf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUE-bL-5zD" userLabel="8">
+                                                        <rect key="frame" x="58" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="30q-0H-QJC"/>
+                                                            <constraint firstAttribute="width" constant="20" id="wX6-P0-jqx"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="8.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="C0B-bu-wEF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="GQu-zs-bKE">
+                                                <rect key="frame" x="0.0" y="94.5" width="78" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-P6-MwJ" userLabel="3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="kQQ-Ta-eJT"/>
+                                                            <constraint firstAttribute="width" constant="20" id="nVQ-Px-Lr1"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="3.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="2zh-GX-Pj2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibe-GP-Kya" userLabel="4">
+                                                        <rect key="frame" x="29" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="AtC-r4-CdR"/>
+                                                            <constraint firstAttribute="width" constant="20" id="tf7-HP-FxO"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="4.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="8uq-m3-C4h"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3w-mR-NvQ" userLabel="5">
+                                                        <rect key="frame" x="58" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="fPG-hx-Rns"/>
+                                                            <constraint firstAttribute="height" constant="20" id="nJs-9i-g2e"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="5.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="uZl-Bf-Hzv"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Uxm-Ca-E8T">
+                                                <rect key="frame" x="0.0" y="67.5" width="78" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWG-FV-89U" userLabel="0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="adG-d4-Mv8"/>
+                                                            <constraint firstAttribute="height" constant="20" id="tn1-tW-oPS"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="0.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="9SR-zc-Lra"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-2k-FzH" userLabel="1">
+                                                        <rect key="frame" x="29" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="OX0-KV-PyL"/>
+                                                            <constraint firstAttribute="height" constant="20" id="fOO-qa-GsZ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="1.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="sXf-Zn-Rek"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMk-1I-bxG" userLabel="2">
+                                                        <rect key="frame" x="58" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="ZQX-Kp-Fso"/>
+                                                            <constraint firstAttribute="height" constant="20" id="kSE-ua-CS1"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="2.circle" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="zwm-xO-DhP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the number you think opponent has." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4T-Qm-NA8">
+                                                <rect key="frame" x="0.0" y="44.5" width="72" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="cbW-dX-C8K"/>
+                                                    <constraint firstAttribute="width" constant="72" id="m8c-h9-wpw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Numbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qup-xd-uGi">
+                                                <rect key="frame" x="0.0" y="38.5" width="78" height="8.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="9Fi-wf-yri"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
+                                                <color key="textColor" red="0.0" green="0.052382637570000001" blue="0.5593955572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITT-fg-ahG">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="14.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78" id="qKj-Hz-Rh9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.052382637570000001" blue="0.5593955572" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD8-vO-vbl">
+                                                <rect key="frame" x="0.0" y="19.5" width="38.5" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9a-bl-zIf">
+                                                <rect key="frame" x="57" y="19.5" width="21" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="DCI-I2-1qp"/>
+                                                    <constraint firstAttribute="width" constant="21" id="ia3-gX-ZTR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="set">
+                                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onSetMyNumber:" destination="IZS-4r-UPS" eventType="touchUpInside" id="vja-eu-ood"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me7-F3-ox7" userLabel="9">
+                                                <rect key="frame" x="29" y="148.5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="0mG-ez-8dP"/>
+                                                    <constraint firstAttribute="width" constant="20" id="IhD-bX-mVa"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="9.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onTapAvailableNum:" destination="IZS-4r-UPS" eventType="touchUpInside" id="vja-fJ-wAB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="GQu-zs-bKE" firstAttribute="top" secondItem="Uxm-Ca-E8T" secondAttribute="bottom" constant="7" id="3Jw-AQ-dbB"/>
+                                            <constraint firstItem="oD8-vO-vbl" firstAttribute="top" secondItem="ITT-fg-ahG" secondAttribute="bottom" constant="5" id="CA3-R3-5nk"/>
+                                            <constraint firstAttribute="trailing" secondItem="ITT-fg-ahG" secondAttribute="trailing" id="Ga7-Jh-5mV"/>
+                                            <constraint firstAttribute="height" constant="174" id="HgO-5A-sTp"/>
+                                            <constraint firstItem="a9a-bl-zIf" firstAttribute="trailing" secondItem="ITT-fg-ahG" secondAttribute="trailing" id="N5N-py-N1L"/>
+                                            <constraint firstItem="GQu-zs-bKE" firstAttribute="leading" secondItem="p4T-Qm-NA8" secondAttribute="leading" id="NKZ-TY-kyg"/>
+                                            <constraint firstItem="Me7-F3-ox7" firstAttribute="top" secondItem="yuh-Sf-vVH" secondAttribute="bottom" constant="7" id="OSF-Ud-guj"/>
+                                            <constraint firstItem="Qup-xd-uGi" firstAttribute="top" secondItem="oD8-vO-vbl" secondAttribute="bottom" constant="7" id="P2p-oS-7Wy"/>
+                                            <constraint firstItem="Uxm-Ca-E8T" firstAttribute="leading" secondItem="p4T-Qm-NA8" secondAttribute="leading" id="Q1P-lr-n6n"/>
+                                            <constraint firstItem="Uxm-Ca-E8T" firstAttribute="top" secondItem="p4T-Qm-NA8" secondAttribute="bottom" constant="8" id="XfW-Qt-zmZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ITT-fg-ahG" secondAttribute="trailing" id="Z5x-no-Ztn"/>
+                                            <constraint firstItem="yuh-Sf-vVH" firstAttribute="leading" secondItem="GQu-zs-bKE" secondAttribute="leading" id="cD5-MU-V57"/>
+                                            <constraint firstItem="oD8-vO-vbl" firstAttribute="leading" secondItem="ITT-fg-ahG" secondAttribute="leading" id="cJj-Uc-PRN"/>
+                                            <constraint firstItem="ITT-fg-ahG" firstAttribute="top" secondItem="y3X-dH-yWK" secondAttribute="top" id="ege-IQ-R2l"/>
+                                            <constraint firstItem="a9a-bl-zIf" firstAttribute="bottom" secondItem="oD8-vO-vbl" secondAttribute="bottom" id="fex-KA-xTd"/>
+                                            <constraint firstItem="Qup-xd-uGi" firstAttribute="leading" secondItem="y3X-dH-yWK" secondAttribute="leading" id="h1l-0W-Io5"/>
+                                            <constraint firstAttribute="width" constant="78" id="i5M-FN-4So"/>
+                                            <constraint firstItem="Me7-F3-ox7" firstAttribute="centerX" secondItem="pqh-sn-gfr" secondAttribute="centerX" id="oZH-85-hI2"/>
+                                            <constraint firstItem="p4T-Qm-NA8" firstAttribute="top" secondItem="Qup-xd-uGi" secondAttribute="bottom" constant="-2.5" id="riS-Td-bE7"/>
+                                            <constraint firstItem="p4T-Qm-NA8" firstAttribute="leading" secondItem="Qup-xd-uGi" secondAttribute="leading" id="uDZ-nQ-nHm"/>
+                                            <constraint firstItem="yuh-Sf-vVH" firstAttribute="top" secondItem="GQu-zs-bKE" secondAttribute="bottom" constant="7" id="uNO-aE-4bB"/>
+                                            <constraint firstItem="ITT-fg-ahG" firstAttribute="leading" secondItem="y3X-dH-yWK" secondAttribute="leading" id="vvv-nR-rag"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Uxm-Ca-E8T" firstAttribute="leading" secondItem="p4T-Qm-NA8" secondAttribute="leading" id="3cE-2i-WGY"/>
-                                    <constraint firstItem="Me7-F3-ox7" firstAttribute="centerX" secondItem="pqh-sn-gfr" secondAttribute="centerX" id="3p3-au-pmn"/>
-                                    <constraint firstItem="yuh-Sf-vVH" firstAttribute="top" secondItem="GQu-zs-bKE" secondAttribute="bottom" constant="8" id="4RP-Ae-hRh"/>
-                                    <constraint firstItem="NHd-eH-5Tn" firstAttribute="leading" secondItem="Qup-xd-uGi" secondAttribute="trailing" constant="10" id="Bue-j6-xg6"/>
                                     <constraint firstItem="IEx-BB-qIH" firstAttribute="leading" secondItem="GLA-8J-xbH" secondAttribute="leading" constant="8" id="F9q-KH-P7h"/>
-                                    <constraint firstItem="yuh-Sf-vVH" firstAttribute="leading" secondItem="GQu-zs-bKE" secondAttribute="leading" id="FZK-g6-zmB"/>
-                                    <constraint firstItem="p4T-Qm-NA8" firstAttribute="leading" secondItem="Qup-xd-uGi" secondAttribute="leading" id="KDv-2i-cN1"/>
                                     <constraint firstItem="pMi-Bf-bgb" firstAttribute="top" secondItem="GLA-8J-xbH" secondAttribute="top" constant="8" id="Lyf-1M-AWO"/>
-                                    <constraint firstItem="Qup-xd-uGi" firstAttribute="leading" secondItem="GLA-8J-xbH" secondAttribute="leading" constant="8" id="MVj-Ja-zga"/>
                                     <constraint firstItem="pMi-Bf-bgb" firstAttribute="centerX" secondItem="GLA-8J-xbH" secondAttribute="centerX" id="P2m-JG-8s0"/>
-                                    <constraint firstItem="Uxm-Ca-E8T" firstAttribute="top" secondItem="p4T-Qm-NA8" secondAttribute="bottom" constant="8" id="PJc-f9-XBv"/>
-                                    <constraint firstItem="Qup-xd-uGi" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="bottom" constant="8" id="PN3-4A-9Va"/>
                                     <constraint firstItem="NHd-eH-5Tn" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="bottom" constant="8" id="Pfb-u2-2my"/>
-                                    <constraint firstItem="p4T-Qm-NA8" firstAttribute="top" secondItem="Qup-xd-uGi" secondAttribute="bottom" constant="-2.5" id="Vfq-Qk-flk"/>
-                                    <constraint firstAttribute="bottom" secondItem="NHd-eH-5Tn" secondAttribute="bottom" id="Wz3-rD-hMN"/>
+                                    <constraint firstItem="y3X-dH-yWK" firstAttribute="top" secondItem="NHd-eH-5Tn" secondAttribute="top" id="SJd-UK-Qc3"/>
+                                    <constraint firstAttribute="bottom" secondItem="NHd-eH-5Tn" secondAttribute="bottom" constant="8" id="Wz3-rD-hMN"/>
                                     <constraint firstItem="NHd-eH-5Tn" firstAttribute="trailing" secondItem="E0S-TK-XcD" secondAttribute="trailing" id="dga-Ye-R4h"/>
-                                    <constraint firstItem="Me7-F3-ox7" firstAttribute="top" secondItem="yuh-Sf-vVH" secondAttribute="bottom" constant="9" id="gb5-F2-5cu"/>
-                                    <constraint firstItem="GQu-zs-bKE" firstAttribute="top" secondItem="Uxm-Ca-E8T" secondAttribute="bottom" constant="8" id="gnG-pL-Tli"/>
+                                    <constraint firstItem="NHd-eH-5Tn" firstAttribute="leading" secondItem="y3X-dH-yWK" secondAttribute="trailing" constant="10" id="gRN-Be-3kp"/>
                                     <constraint firstAttribute="trailing" secondItem="E0S-TK-XcD" secondAttribute="trailing" constant="8" id="hYm-6T-rz6"/>
+                                    <constraint firstItem="y3X-dH-yWK" firstAttribute="leading" secondItem="GLA-8J-xbH" secondAttribute="leading" constant="8" id="k7F-fH-fQv"/>
                                     <constraint firstItem="E0S-TK-XcD" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="top" id="o9X-GC-EJf"/>
                                     <constraint firstItem="IEx-BB-qIH" firstAttribute="top" secondItem="pMi-Bf-bgb" secondAttribute="top" id="rRN-Sq-5Tn"/>
-                                    <constraint firstItem="GQu-zs-bKE" firstAttribute="leading" secondItem="p4T-Qm-NA8" secondAttribute="leading" id="yDA-es-SiF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -421,9 +489,11 @@
                     <connections>
                         <outlet property="myCardTableView" destination="NHd-eH-5Tn" id="1mQ-wb-vBe"/>
                         <outlet property="myCardView" destination="GLA-8J-xbH" id="3sB-Gp-NLx"/>
+                        <outlet property="myNumber" destination="oD8-vO-vbl" id="K35-Ey-lzG"/>
                         <outlet property="opponentCardView" destination="35t-tn-3LN" id="uSF-Lj-1xe"/>
                         <outlet property="opponentLabel" destination="hOI-Q8-yyN" id="gvu-Kn-yku"/>
                         <outlet property="playerCardLabel" destination="pMi-Bf-bgb" id="Efj-8A-c0F"/>
+                        <outlet property="scratchView" destination="y3X-dH-yWK" id="IoR-Fz-QOc"/>
                         <segue destination="DKm-Tb-7Rf" kind="presentation" identifier="PredictSegue" id="S7H-el-VLJ"/>
                         <segue destination="82T-VM-syW" kind="show" identifier="CheckSegue" id="6lU-Yd-otk"/>
                     </connections>

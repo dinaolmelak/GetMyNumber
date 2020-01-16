@@ -29,7 +29,7 @@ class CheckViewController: UIViewController {
             let groupNum = Int(groupTextField.text!)!
             let orderNum = Int(orderTextField.text!)!
             let newPredication = NumberData()
-            newPredication.NumberData(Group: groupNum, Order: orderNum)
+            newPredication.setResults(Group: groupNum, Order: orderNum)
             myCardVC.predictedNumbers.append(newPredication)
             myCardVC.myCardTableView.reloadData()
             

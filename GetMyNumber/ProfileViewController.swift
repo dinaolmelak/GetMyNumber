@@ -19,27 +19,26 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func onTapLogOut(_ sender: Any) {
-        let query = PFQuery(className: "Game")
-        let gameID = UserDefaults.standard.object(forKey: "gameID") as! String
-        query.getObjectInBackground(withId: gameID) { (pfobject, error) in
+        
+        let queryReceive = PFUser.query()!
+        queryReceive.whereKey("username", equalTo: PFUser.current()!.username!)
+        queryReceive.getFirstObjectInBackground { (object, error) in
             if error != nil{
-                print("getting Object error\(error!)")
+                print(error!)
             } else{
-                let object = pfobject!
-                object["isOnline"] = false
-                print("found This\(object)")
-                object.saveInBackground { (success, error) in
-                    if success{
-                        print("logged out")
-                    }else{
-                        print("failed Log out")
+                let inObject = object!
+                inObject["isOnline"] = false
+                inObject.saveInBackground { (success, error) in
+                    if error != nil{
+                        print(error!)
+                    } else{
+                        PFUser.logOut()
+                        self.performSegue(withIdentifier: "LoggedOutSegue", sender: self)
                     }
                 }
             }
         }
         
-        PFUser.logOut()
-        performSegue(withIdentifier: "LoggedOutSegue", sender: self)
     }
     
     /*

@@ -22,54 +22,38 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     override func viewDidAppear(_ animated: Bool) {
         onlinePlayers.removeAll()
-        let query = PFQuery(className: "Game")
-        query.includeKey("user")
-        query.whereKey("user", equalTo: PFUser.current()!)
-        query.findObjectsInBackground { (pfobjectS, error) in
-            if error != nil{
-                print(error!)
-            } else{
-                print(pfobjectS!)
-                if pfobjectS!.count == 0{
-                    // do something
-                    let object = PFObject(className: "Game")
-                    object["user"] = PFUser.current()!
-                    object["isOnline"] = true
-                    object.saveInBackground()
-                    UserDefaults.standard.set(object.objectId!, forKey: "gameID")
-                    self.playGameID = object.objectId!
-                }else{
-                    let object = pfobjectS![0]
-                    object["isOnline"] = true
-                    object.saveInBackground()
-                    UserDefaults.standard.set(object.objectId!, forKey: "gameID")
-                    self.playGameID = object.objectId!
-                    print("-----\(object.objectId!)-------")
-                }
-            }
-        }
+        //let query = PFUser.query()!
         getPlayers()
+        //let userQueries = PFUser.query()!
+        
+//        query.findObjectsInBackground { (pfobjects, error) in
+//            if let error = error{
+//                print(error)
+//            } else{
+//                print(pfobjects!)
+//            }
+//        }
         
         
     }
     
     func getPlayers(){
-        let query = PFQuery(className: "Game")
+        let query = PFUser.query()!
         query.whereKey("isOnline", equalTo: true)
-        query.includeKey("user")
         query.findObjectsInBackground { (gamesArray, error) in
             if error != nil{
                 print(error!)
             } else{
                 let players = gamesArray!
-                let gameID = self.playGameID//UserDefaults.standard.object(forKey: "gameID") as! String
+                //UserDefaults.standard.object(forKey: "gameID") as! String
+                print("------\(players)-------")
                 for object in players{
-                    if object.objectId! != gameID{
+                    if object.objectId! != PFUser.current()!.objectId!{
                         self.onlinePlayers.append(object)
                     }
                 }
 
-                print("------\(self.onlinePlayers)-------")
+                
                 self.playersTableView.reloadData()
             }
         }
@@ -92,7 +76,7 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         } else{
             let cell = playersTableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
             let game = onlinePlayers[indexPath.row - 1]
-            let user = game["user"] as! PFUser
+            let user = game as! PFUser
             let isOnline = game["isOnline"] as! Bool
             cell.usernameLabel.text = user.username
             cell.statusLabel.text = String(isOnline)
@@ -115,12 +99,22 @@ class GamesViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let playingVC = segue.destination as? PlayingViewController{
             let tableViewCell = sender as! UITableViewCell
             let indexPath = playersTableView.indexPath(for: tableViewCell)!
-            let playerPFObject = onlinePlayers[indexPath.row - 1]
+            let playerPFObject = onlinePlayers[indexPath.row - 1] as! PFUser
+            
+            let query = PFUser.query()!
+            query.whereKey("username", equalTo: playerPFObject)
+            query.findObjectsInBackground { (array, error) in
+                if error != nil {
+                    print(error!)
+                }else{
+                    print(array)
+                }
+                
+            }
             
             
-            
-            let opponentUser = playerPFObject["user"] as! PFUser
-            playingVC.opponent = opponentUser
+            playingVC.opponent = playerPFObject
+
         }
         
         
